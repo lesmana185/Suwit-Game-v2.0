@@ -1,22 +1,22 @@
 function pComputer() {
     const comp = Math.random();
-    if( comp < 0.34 ) return 'gajah';
-    if( comp >= 0.34 && comp < 0.67 ) return 'orang';
+    if( comp < 0.34 ) return 'batu';
+    if( comp >= 0.34 && comp < 0.67 ) return 'gunting';
 
-    return 'semut';
+    return 'kertas';
 }
 
 function getHasil(comp, player) {
     if ( player == comp ) return 'SERI!';
-    if ( player == 'gajah' ) return ( comp == 'orang' ) ? 'MENANG' : 'KALAH';
-    if ( player == 'orang' ) return ( comp == 'gajah' ) ? 'MENANG' : 'KALAH';
-    if ( player == 'semut' ) return ( comp == 'orang' ) ? 'MENANG' : 'KALAH';
+    if ( player == 'batu' ) return ( comp == 'gunting' ) ? 'MENANG' : 'KALAH';
+    if ( player == 'gunting' ) return ( comp == 'kertas' ) ? 'MENANG' : 'KALAH';
+    if ( player == 'kertas' ) return ( comp == 'batu' ) ? 'MENANG' : 'KALAH';
 }
 
 
 function putar() {
     const imgComputer = document.querySelector('.img-komputer');
-    const gambar = ['gajah', 'semut', 'orang'];
+    const gambar = ['batu', 'kertas', 'gunting'];
     let i = 0;
     const waktuMulai = new Date().getTime();
     setInterval(function() {
